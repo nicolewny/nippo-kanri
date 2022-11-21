@@ -211,7 +211,14 @@ public abstract class ActionBase {
      protected <R> R getSessionScope(AttributeConst key) {
          return (R) request.getSession().getAttribute(key.getValue());
      }
-
+     /**
+      * セッションスコープにパラメータを設定する
+      * @param key パラメータ名
+      * @param value パラメータの値
+      */
+     protected <V> void putSessionScope(AttributeConst key, V value) {
+         request.getSession().setAttribute(key.getValue(), value);
+     }
      /**
       * セッションスコープから指定された名前のパラメータを除去する
       * @param key パラメータ名

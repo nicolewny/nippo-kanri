@@ -22,13 +22,13 @@
         <a href="#" onclick="confirmDestroy();">この従業員情報を削除する</a>
     </p>
     <form method="POST"
-        action="<c:url value='?acion=${action}&command=${commDel}' />">
-        <input type="hidden" name="${AttributeConst.EMP_ID.getValue()}" value="${employee.id}" />
-        <input type="hidden" name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
+            action="<c:url value='?action=${action}&command=${commDel}' />">
+            <input type="hidden" name="${AttributeConst.EMP_ID.getValue()}" value="${employee.id}" />
+            <input type="hidden" name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
     </form>
     <script>
-        function confirmDestory(){
-            if (confirm("本当に削除してよろしいですか？")){
+        function confirmDestroy() {
+            if (confirm("本当に削除してよろしいですか？")) {
                 document.forms[1].submit();
             }
         }
